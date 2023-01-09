@@ -1,10 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import ReactDOM from 'react-dom'
 import './index.css'
+import RickAndMortyApp from './RickAndMortyApp'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RickAndMortyApp />
+  </React.StrictMode>,
+  document.getElementById('root')
 )

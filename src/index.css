@@ -1,0 +1,377 @@
+*{
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #06282E;
+    color: skyblue;
+    padding: 300px 20px 0;
+  }
+  /* ---- Reset ---- */
+  h1, h2, h3, h4, p, ul {
+    margin: 0;
+  }
+  ul{
+    list-style: none;
+    padding-left: 0;
+  }
+  .header {
+    background-image: url('./assets/rick-and-morty-letters.png'), url('./assets/rick-and-morty-banner.png');
+    background-repeat: no-repeat;
+    background-position: center 100px, center;
+    background-size: 300px, cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 48px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  /* ------ SEARCH BOX COMPONENT ------ */
+  .component-search {
+    display: flex;
+  }
+  .input-search{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    opacity: 0.9;
+    width: min(65vw, 400px);
+    box-shadow: 1px 1px 7px 0 #0005;
+  }
+  .button-search{
+    border: 1px solid #000b;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    padding: 8px 15px;
+    opacity: 0.85;
+    background-color: purple;
+    box-shadow: 2px 1px 7px 0 #51792b;
+    color: white;
+    text-shadow: 1px 1px #0005;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .button-search:hover{
+    opacity: 1;
+    transition: opacity 200ms ease;
+  }
+  /* ------ LOCATION INFO COMPONENT ------ */
+  .info-location-container{
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #082024;
+    margin: 20px 0;
+    border-radius: 14px;
+    transition: transform 200ms ease;
+  }
+  .info-location-container:hover{
+    filter: brightness(1.05);
+    transition: transform 200ms ease;
+    transform: scale(1.03);
+  }
+  .info-location-title {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .hr-location-info{
+    border: none;
+    border-top: 1px solid #cacaca9a;
+    opacity: 0.2;
+  }
+  .list-description-ubication{
+    display: flex;
+    justify-content: space-around;
+    gap: 3.5%;
+  
+    margin-top: 15px;
+  }
+  .list-item-description{
+    font-size: 14px;
+    color: #cacaca9a;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+  }
+  .span-description{
+    font-weight: 500;
+    color: #dddd;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  /* ------ RESIDENT LIST COMPONENT ------ */
+  .resident-section{
+    padding:  20px 0;
+  }
+  .resident-section-title{
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .pagination-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .button-prev-container,
+  .button-next-container {
+    display: flex;
+    align-items: center;
+  }
+  .change-pages-btn{
+    display: block;
+    background-color: transparent;
+    color: #dddd;
+    font-size: 25px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 200ms ease;
+  }
+  .change-pages-btn:hover{
+    transform: scale(1.2);
+    transition: transform 200ms ease;
+  }
+  .number-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .number-page{
+    display: block;
+    font-size: 18px;
+    padding: 4px 8px;
+    font-weight: 200;
+    border: none;
+    color: #ddd6;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 200ms ease;
+  }
+  .number-page:hover{
+    transform: scale(1.2);
+    transition: transform 200ms ease;
+  }
+  .number-page-active {
+    font-weight: 900;
+    font-size: 20;
+    transform: scale(1.2);
+    transition: transform 200ms ease;
+    color: #dddd;
+    text-decoration: underline;
+  }
+  .card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+  }
+  /* ------ RESIDENT INFO COMPONENT ------ */
+  .card-resident{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #082024;
+    padding: 10px;
+    position: relative;
+    border: 1px solid #ddd3;
+    transition: transform 200ms ease;
+  }
+  .card-resident:hover{
+    filter: brightness(1.05);
+    transition: transform 200ms ease;
+    transform: scale(1.03);
+  }
+  .card-resident:nth-child(2n){
+    flex-direction: row-reverse;
+  }
+  .card-image{
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid skyblue;
+  }
+  .card-Info-container{
+    padding-left: 15px;
+    padding-right: 10px;
+    align-self: stretch;
+  }
+  .title-card{
+    font-size: 17px;
+    text-align: center;
+  }
+  .state-resident{
+    position: absolute;
+    left: 9px;
+    display: flex;
+    align-items: center;
+    bottom: 15%;
+    background-color: #082024;
+    padding: 5px;
+    padding-right: 15px;
+    border-radius: 0 5px 5px 0;
+  }
+  .card-resident:nth-child(2n) .state-resident{
+    left: initial;
+    right: 9px;
+    flex-direction: row-reverse;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+    padding-left: 15px;
+  }
+  .circle-indicator{
+    width: 15px;
+    aspect-ratio: 1;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .card-resident:nth-child(2n) .circle-indicator {
+    margin-right: initial;
+    margin-left: 10px;
+  }
+  .state-resident-description {
+    font-weight: 300;
+    color: #dddd;
+  }
+  .title-card{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 0 5px;
+    position: absolute;
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 15px 0;
+    background-color: #082024;
+    white-space: nowrap;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #ddd3;
+    border-bottom: none;
+  }
+  .li-card{
+    font-weight: 300;
+    font-size: 13px;
+    color: #cacaca9a;
+    display: flex;
+    flex-direction: column;
+  }
+  .li-card:last-child {
+    display: initial;
+  }
+  .title-description-card{
+    font-weight: 600;
+    font-size: 100%;
+    color: #dddd;
+    margin-right:10px;
+  }
+  /* ------ LOADER INCORRECT COMPONENT ------ */
+  .loader-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 50px;
+  }
+  .img-warning{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    margin-bottom: 20px;
+  }
+  .img-loader{
+    width: min(50%, 150px );
+  }
+  .loader-title{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    color: #ddd9;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .loader-title-span {
+    color: #7FBE45;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .loader-number-valid{
+    font-weight: 500;
+    color: #dddd;
+  }
+  /* ------ MEDIA QUERIES COMPONENT ------ */
+  @media screen and (min-width: 375px) {
+    .card-resident{
+      width: 335px;
+    }
+    .description-card-container{
+      padding-top: 10px;
+    }
+    .li-card{
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+  }
+  @media screen and (min-width: 450px) {
+    .container-location-info{
+      display: flex;
+      justify-content: center;
+    }
+    .info-location-container{
+      width: 410px;
+    }
+  }
+  @media screen and (min-width: 760px){
+    .header{
+      background-position: center 60px, center;
+      background-size: 400px, cover;
+    }
+  }
+  @media screen and (min-width: 1125px) {
+    .loader-container{
+      grid-template-columns: repeat(3, auto);
+    }
+    .rick {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+    .morty{
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+    .img-warning {
+      grid-column: 2 / 3;
+    }
+    .loader-title {
+      grid-column: 2 / 3;
+    }
+    .card-resident:nth-child(2n){
+      flex-direction: row;
+    }
+    .card-resident:nth-child(2n) .state-resident{
+      left: 9px;
+      right: initial;
+      flex-direction: row;
+      padding: 5px;
+      padding-right: 15px;
+      border-radius: 0 5px 5px 0;
+    }
+    .card-resident:nth-child(2n) .circle-indicator {
+      margin-right: 10px;
+      margin-left: initial;
+    }
+  }
